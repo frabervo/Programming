@@ -63,4 +63,19 @@ while true:
     Anweisung2
 
 ## Lists
+20. Lists Deklaration
 
+words = ["Hello", "world", "!"]  
+
+Auf die Elemente durch deren Index in dem Feld: words[0], words[1], words[2]. Erstes Elements begin bei 0
+
+Feld-Zwei Dimensionen 
+
+21. String as Lists
+str="Python"
+print(str[1]) --> y
+nums = [1, 2, 3]
+print(nums + [4, 5, 6])  --> [1, 2, 3, 4, 5, 6]
+print(nums * 3) --> [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+22. 

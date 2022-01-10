@@ -4,4 +4,63 @@
 
 Dieses Verzeichnis ist für die Programmierungssprache Python. Zuerst möchte ich die Grundlagen durchgehen, die ich in [Sololearn](https://www.sololearn.com/learning/1157) gelernt habe.
 
-<a href="https://www.sololearn.com/learning/1157">link</a>
+1. Hello World
+2. Einfache Operationen:            +; -; /; //
+3. Datentypen
+4. Exponentation:                   print(2**5)--> 2^5
+5. Quotient(//) und Rest(%)
+6. Zeichenkette:                    " " and ''
+7. Zeilenumbrüche:                  \n und """ """
+8. Zeichenkette-Operationen:        "string"*3 und "string1" + "string2"
+9. variablen-Deklarationen:         Variablenname = Wert
+10. Mit Variabelen arbeiten:        Datentyp(input())
+11. User-Eingabe:                   input()
+12. Mit input() arbeiten
+13. In-Place-Operatoren:            x+=3
+
+## Kontrollstruktur
+
+14. Booleen (True und False) und Operatoren:         ==, != , >, >=, =<, < Für Zahlen und Zeichenkette und print(4==5) --> False
+15. if- Kontrollstruktur
+if Bedingung:
+   Anweiseungen
+
+Die Einrückung vor den Anweisung ermöglicht die Bearbeitung des Codes in Blöcken
+16. if-else
+if Bedingung: 
+    Anweisungen 
+else:
+    Anweisungen 
+Eine Else-Kontrollstruktur kann nur eine if-Anweisung enthalten.
+
+if Bedingung: 
+    Anweisungen 
+elif Bedingung:
+    Anweisungen
+else:
+    Anweisung
+
+17. Boolean Operatoren:                              and, or, not 
+18. While-loops
+
+while Bedingung: 
+    Anweisungen
+    Kontroll-Variable zb. inkrementieren oder dekrementieren
+
+19. Break und continue
+
+while true: 
+    Anweisungen
+    Kontroll-Variable zb. inkrementieren oder dekrementieren
+    variable_überprüfen
+    break --> Geht von der Schleife raus
+
+ while true: 
+    Anweisung1
+    Kontroll-Variable zb. inkrementieren oder dekrementieren
+    variable_überprüfen
+    continue    --> Die Anweisung zwei wird an dieser Stelle nicht ausgeführt  
+    Anweisung2
+
+## Lists
+

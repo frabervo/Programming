@@ -1,3 +1,5 @@
-# Python-Basics
+# Python-Grundlagen
 
 ![Sololearn](https://www.google.com/imgres?imgurl=https%3A%2F%2Ficonape.com%2Fwp-content%2Fpng_logo_vector%2Fsololearn-logo.png&imgrefurl=https%3A%2F%2Ficonape.com%2Fsololearn-logo-logo-icon-svg-png.html&tbnid=Nllni-XPSCn9NM&vet=12ahUKEwjMm4ikoKf1AhVF-4UKHejZBFAQMygQegUIARDLAQ..i&docid=vCW52Xsn0aWufM&w=600&h=600&itg=1&q=Sololearn&ved=2ahUKEwjMm4ikoKf1AhVF-4UKHejZBFAQMygQegUIARDLAQ)
+
+Dieses Verzeichnis ist für die Programmierungssprache Python. Zuerst möchte ich die Grundlagen durchgehen, die ich in [!Sololearn](https://www.sololearn.com/learning/1157) gelernt habe.

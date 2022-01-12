@@ -26,6 +26,7 @@ Dieses Verzeichnis ist für die Programmierungssprache Python. Zuerst möchte ic
       Anweiseungen
 
 Die Einrückung vor den Anweisung ermöglicht die Bearbeitung des Codes in Blöcken
+
 16. if-else
 
 if Bedingung: 

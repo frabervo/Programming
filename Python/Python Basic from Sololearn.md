@@ -22,11 +22,12 @@ Dieses Verzeichnis ist für die Programmierungssprache Python. Zuerst möchte ic
 
 14. Booleen (True und False) und Operatoren:         ==, != , >, >=, =<, < Für Zahlen und Zeichenkette und print(4==5) --> False
 15. if- Kontrollstruktur
-if Bedingung:
-   Anweiseungen
+   if Bedingung:
+      Anweiseungen
 
 Die Einrückung vor den Anweisung ermöglicht die Bearbeitung des Codes in Blöcken
 16. if-else
+
 if Bedingung: 
     Anweisungen 
 else:
@@ -72,6 +73,7 @@ Auf die Elemente durch deren Index in dem Feld: words[0], words[1], words[2]. Er
 Feld-Zwei Dimensionen 
 
 21. String as Lists
+
 str="Python"
 print(str[1]) --> y
 nums = [1, 2, 3]
@@ -79,6 +81,7 @@ print(nums + [4, 5, 6])  --> [1, 2, 3, 4, 5, 6]
 print(nums * 3) --> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 
 22. Lists Operationen:
+
 + in - Operator: ist auch verwendet, um zu wissen, ob ein String ein anderes String enthält.
     words = ["spam", "egg", "spam", "sausage"]
     print("spam" in words) ---> True
@@ -110,6 +113,7 @@ print(nums * 3) --> [1, 2, 3, 1, 2, 3, 1, 2, 3]
     NB: **stop** und **continue** können hier verwendet werden
 
 24. **range(n)** : gibt die Zahlen von 0 bis n-1
+
     Die Funktion list() kann die Rückgabewerte als Array ausgeben lassen.--> list(range(n))--> [0,1,2,...,n-1]
 
     **range(zahl1, zahl2)**: gibt die zahlen von zahl1 bis (zahl2-1) zurück.
@@ -122,6 +126,7 @@ print(nums * 3) --> [1, 2, 3, 1, 2, 3, 1, 2, 3]
     --> Die Anweisungen werden n-Mal durchgeführt.
 
 25. **lists slices**
+
     squares=[0,1,4,9,16,25,36,49,64,81]
     print(squares[zahl1:n]) --> gibt die Elemente zahl1 bis (n-1) vom Feld squares zurück.
     print(squares[:n]) --> gibt die Elemente 0 bis (n-1) vom Feld squares zurück. 
@@ -155,6 +160,7 @@ nums=[1,2,3]
     a="{x}, {y}".format(x=5, y=12)
 
 str1="
+
 + ",".**join**(["spam","eggs","ham"]) --> "spam,eggs,ham"
 + "Hello ME".**replace**("ME","world") --> "Hello world"
 + "This is a sentence.".**startswith(**"This") --> True
@@ -172,6 +178,7 @@ Aufruf: my_func()
 
 28. Comment: mit #. Python hat keine mehrzeilige Linienkommentar
 29. Docstrings: Ein Text zum Beschreiben einer Funktion
+
 Beispiel: 
 
     def shout(word):

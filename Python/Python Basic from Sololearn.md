@@ -161,6 +161,7 @@ nums=[1,2,3]
 + nums.count(element) --> Gibt zurück, wie oft element in nums aufgetaucht ist.
 + nums.remove(item) --> Löscht element in nums.
 + nums.reverse(): Invertiert daas Feld nums.
++ nums.extend([4,5,6]): erweitert die Liste nums um die Liste im Klammer
 
 26. Funktionen zu strings:
 

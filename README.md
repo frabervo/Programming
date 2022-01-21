@@ -3,4 +3,4 @@ In diesem Verzeichnis befinden sich Trainingsübungen und Projekte zu einer Prog
 
 ## Odrner
 
-Der Ordner python beinhaltet den Lernstoff zu Python. 
+1. Der Ordner python beinhaltet den Lernstoff zu Python. 

@@ -30,4 +30,3 @@ python3 todolist.py %1 %2
 - sys module
 
 This module provides access to some variables used or managed by the interpreter and to functions that interact strongly with the interpreter. It is always available.
-To write or read data from/to the standard streams use the underlying buffer object. For example, to write bytes to stdout, vreuse: sys.stdout.buffer.write(b'abc').

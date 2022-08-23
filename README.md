@@ -3,4 +3,4 @@ This directory contains training exercises and projects for a programming langua
 
 ## Odrner
 
-The python folder contains the learning material for Python. 
+The python folder contains the learning material for Python search as python projects. 

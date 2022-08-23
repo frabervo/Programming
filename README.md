@@ -1,6 +1,6 @@
 # Programming
-In diesem Verzeichnis befinden sich Trainingsübungen und Projekte zu einer Programmierungssprache. 
+This directory contains training exercises and projects for a programming language. 
 
 ## Odrner
 
-1. Der Ordner python beinhaltet den Lernstoff zu Python. 
+The python folder contains the learning material for Python. 

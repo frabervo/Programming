@@ -4,8 +4,6 @@ import requests
 def extract_permissions() -> list:
     """This function takes the permission list from the MySQL website
 
-
-
     Returns:
         list: a list of availabe grants in MySQL
     """

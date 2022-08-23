@@ -1,6 +1,6 @@
-# Ordner Python 
-Zum Lernen von Python wird hauptsätzlich folgende verwendet: 
-+ Die Dokumentation von [Python ]( https://docs.python.org/3/)
-+ Das Buch: Einführung in PYTHON 3 von Bernd Klein, 4. Auflage
+# Python folder 
+The following is mainly used to learn Python: 
++ The documentation of [Python ]( https://docs.python.org/3/)
++ The book: Introduction to PYTHON 3 by Bernd Klein, 4th edition
 ## Odner Leetcode
-Leetcode wird zum Übungszwecken verwendet. In diesem Verzeichnis befindet sich deswegen die von mir geschriebene Source-Dateien.
+Leetcode is used for training purposes. 

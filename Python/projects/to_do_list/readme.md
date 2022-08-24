@@ -19,6 +19,8 @@ The application was developed using the Python programming language. The Python 
 ```
 python todolist.py "$@"
 ```
+
+the script must be an executable file: ```chmod ag
 ### create a symbolic link for executable file
 ```ln -s todolist.sh todolist```
 
@@ -33,7 +35,10 @@ this command will create a directory named ".todolist_env". This folder is hidde
 **activate the virtual environment**:
 run this command in the directory where the code is stored:
 ```source .todolist_env/bin/activate```
-To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```
+
+To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```. 
+
+write this codeline in the file .bashrc if you want to make it permanent.
 **deactivate the virtual environment**
 ```deactivate```
 

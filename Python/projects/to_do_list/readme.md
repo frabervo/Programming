@@ -3,7 +3,7 @@ Source: [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-make-a-todo-list-cl
 Last access: 08/16/2022
 
 ## Requirements 
-+ The running operating system: Windows
++ The running operating system: Linux
 + Python3 is installed
 
 ## Functionalities of the application 
@@ -15,15 +15,27 @@ Last access: 08/16/2022
 ## Tools 
 The application was developed using the Python programming language. The Python script is in the file todolist.py and a script todolist.bat is needed to run the Python script.
 
-### todolist.bat
+### todolist.sh
 ```
-@echo off
-python3 todolist.py %1 %2
+python todolist.py "$@"
 ```
 ### create a symbolic link for executable file
-```mklink todolist todolist.bat```
+```ln -s todolist.sh todolist```
 
 :memo: This command must be executed with administrative privileges.
+## Python development environment
+to create a virtual environment run this command in the directory where the code is stored.
+```
+python3 -m venv .todolist_env
+```
+this command will create a directory named ".todolist_env". This folder is hidden and can be shown with ```ls -la```. 
+
+**activate the virtual environment**:
+run this command in the directory where the code is stored:
+```source .todolist_env/bin/activate```
+
+**deactivate the virtual environment**
+```deactivate```
 
 ### Detailed description of the source code
 #### Modules

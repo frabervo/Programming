@@ -13,18 +13,8 @@ Last access: 08/16/2022
 + Display the to-do list 
 
 ## Tools 
-The application was developed using the Python programming language. The Python script is in the file todolist.py and a script todolist.bat is needed to run the Python script.
+The application was developed using the Python programming language. The Python script is in the file todolist.py and a script setup.py is needed to run the command lines.
 
-### todolist.sh
-```
-python todolist.py "$@"
-```
-
-the script must be an executable file: ```chmod ag
-### create a symbolic link for executable file
-```ln -s todolist.sh todolist```
-
-:memo: This command must be executed with administrative privileges.
 ## Python development environment
 to create a virtual environment run this command in the directory where the code is stored.
 ```
@@ -32,18 +22,42 @@ python3 -m venv .todolist_env
 ```
 this command will create a directory named ".todolist_env". This folder is hidden and can be shown with ```ls -la```. 
 
-**activate the virtual environment**:
+### activate the virtual environment
 run this command in the directory where the code is stored:
 ```source .todolist_env/bin/activate```
 
 To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```. 
 
 write this codeline in the file .bashrc if you want to make it permanent.
-**deactivate the virtual environment**
-```deactivate```
+### deactivate the virtual environment
+command: ```deactivate```
 
+## Setuptools Integration
+### why the setuptools Integration?
+Setuptools is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). 
+source: https://en.wikipedia.org/wiki/Setuptools
+
+### how to use the setuptools Integration?
+To bundle your script with setuptools, you only need the script in a Python package and a setup.py file.
+#### run the script with setuptools Integration
+1. activate the virtual enivronment
+run this command in the directory where the code is stored:
+```
+source .todolist_env/bin/activate
+```
+2. set the runtime environment
+run this command in the directory where the code is stored:
+```
+pip install --editable .
+```
+#### test the script 
+run this command line: 
+```
+todolist --create test
+```
 ### Detailed description of the source code
 #### Modules
 - sys module
-
 This module provides access to some variables used or managed by the interpreter and to functions that interact strongly with the interpreter. It is always available.
+
+- click module

@@ -1,21 +1,23 @@
-# <p style="text-align:center">Developing a to-list application</p>
-Source: [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-make-a-todo-list-cli-application-using-python/)
-Last access: 08/16/2022
+# Developing a to-list application
+The purpose of this project is to create a todolist application that will run as CLI (Command Line Interface)
+## Technical requirements
++ OS : Linux
++ Python3 installed
++ a Bash Shell
 
-## Requirements 
-+ The running operating system: Linux
-+ Python3 is installed
-
-## Functionalities of the application 
-+ Add a new task
-+ Delete a task 
-+ Modify a task 
-+ Display the to-do list 
+## Functionalities of the application
++ create a to-do list 
++ Add a new task to a given list
++ Delete a task in a given list
++ Delete a to-do list 
++ update a task in a list 
++ Display the to-do lists
++ Display task of a given to-do list 
 
 ## Tools 
-The application was developed using the Python programming language. The Python script is in the file todolist.py and a script setup.py is needed to run the command lines.
+The application was developed using the Python programming language. The Python script [todolist.py](./todolist.py) content the programm code and a script [setup.py](./setup.py) (for the setuptool environment) is needed to setup the virtual environment for the application command line.
 
-## Python development environment
+## Python virtual environment
 to create a virtual environment run this command in the directory where the code is stored.
 ```
 python3 -m venv .todolist_env
@@ -23,7 +25,7 @@ python3 -m venv .todolist_env
 this command will create a directory named ".todolist_env". This folder is hidden and can be shown with ```ls -la```. 
 
 ### activate the virtual environment
-run this command in the directory where the code is stored:
+run this command in the project directory:
 ```source .todolist_env/bin/activate```
 
 To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```. 
@@ -34,30 +36,29 @@ command: ```deactivate```
 
 ## Setuptools Integration
 ### why the setuptools Integration?
-Setuptools is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). 
-source: https://en.wikipedia.org/wiki/Setuptools
+[Setuptools](https://en.wikipedia.org/wiki/Setuptools) is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). 
 
 ### how to use the setuptools Integration?
-To bundle your script with setuptools, you only need the script in a Python package and a setup.py file.
-#### run the script with setuptools Integration
+To bundle your script with setuptools, you only need the script in a Python package and a [setup.py](./setup.py) file.
 1. activate the virtual enivronment
-run this command in the directory where the code is stored:
+run this command in the project directory:
 ```
-source .todolist_env/bin/activate
+source ./.todolist_env/bin/activate
 ```
 2. set the runtime environment
 run this command in the directory where the code is stored:
 ```
 pip install --editable .
 ```
-#### test the script 
-run this command line: 
+after that you run the todolist commands
 ```
-todolist --create test
-```
-### Detailed description of the source code
-#### Modules
-- sys module
-This module provides access to some variables used or managed by the interpreter and to functions that interact strongly with the interpreter. It is always available.
+todolist --help
+``` 
 
-- click module
+### Detailed description of the source code
+Because a docstring was included by programming. The documentation of the can be generate automaticaly by runing the follow command in the project directory: 
+```python3 ./doc_generatotor.py >> code_doc.txt``` 
+
+This command is also in the shell script: ./doc_generator.sh
+
+So the documentation of the code: ./doc_code.txt

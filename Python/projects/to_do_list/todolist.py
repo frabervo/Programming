@@ -1,6 +1,9 @@
+"""Modules implementation for the todolist commando line interface
+ """
 # modules
 import json
 import datetime
+import os
 from pathlib import Path
 import sys
 from termcolor import colored
@@ -95,7 +98,7 @@ def add_task(lists_dir: str, task: str, list_name: str) -> None:
             # save the list --> convert from python to JSON and store in the json file
             file_obj.truncate(0)             # delete the actuel content of the file
             file_obj.seek(0)
-            json.dump(list_content, fp=file_obj, indent=2)
+            json.dump(obj=list_content, fp=file_obj, indent=2)
             file_obj.close()
     else:
         click.echo(colored("the to-do list doesn't exist !", "red"))
@@ -113,7 +116,7 @@ def show_list(lists_dir: str) -> None:
     file_path = Path(lists_dir)
     list_name = ""          # to store the to-do list name
     for file in file_path.iterdir():
-        list_name= file.name[1:]
+        list_name = file.name[1:]
         list_name = list_name[:-5]
         click.echo(colored(list_name, "blue"))
 
@@ -147,7 +150,7 @@ def show_tasks(lists_dir: str, list_name: str) -> None:
         click.echo(colored(f"the to-list: {list_name} doesn't exists", "red"))
 
 
-def del_task(number: int, lists_dir: str, list_name: str):
+def del_task(number: int, lists_dir: str, list_name: str) -> None:
     """delete  task
 
     the function delete the tasks with the number of the list: list_name
@@ -175,8 +178,8 @@ def del_task(number: int, lists_dir: str, list_name: str):
             if num == -1:
                 click.echo(f"Task: {num}  doesn't exist")
                 sys.exit(1)
-            list_content.pop(num -1)
-            # ********reorder the list*************
+            list_content.pop(num - 1)
+            # reorder the list
             for index, task in enumerate(list_content):
                 task["task_number"] = index + 1
             # clear the to-do list
@@ -190,14 +193,88 @@ def del_task(number: int, lists_dir: str, list_name: str):
         click.echo(colored(f"the to-list: {list_name} doesn't exists", "red"))
 
 
+def delete_list(lists_dir: str, list_name: str) -> None:
+    """delete  list
+
+    the function delete the given list
+
+    Parameters
+    ----------
+        lists_dir : str
+                the name of the directory where the lists are stored
+        list_name : str
+                the name of the to-do list
+    """
+    path_list = Path(lists_dir + "/." + list_name + ".json")
+
+    if path_list.exists() is True:
+        print(path_list)
+        os.system(f"rm {path_list}")
+        click.echo(colored(f"The to-do list: {list_name} was deleted successfully!", "green"))
+    else:
+        click.echo(colored(f"The to-do list: {list_name} doesn't exists", "red"))
+
+
+def update_task(lists_dir: str, listname: str) -> None:
+    """update a to-do list
+
+    this function update a task in the given to-do list
+
+    Parameters
+    ----------
+    lists_dir : str
+            the name of the directory where the lists are stored
+    listname :
+            the name of the list to be update
+    """
+    # variable
+    number = 0              # The number of the task to be update
+    new_task = ""           # To store the new task
+    list_path = ""           # to store the path of the list
+    list_content = []        # take the content of a list with the type <list>
+
+    list_path = Path(lists_dir + "/." + listname + ".json")
+    if list_path.exists() is True:
+        show_tasks(lists_dir=lists_dir, list_name=listname)
+        click.echo("\n")
+        try:
+            # ask for the number of the task
+            number = int(input("Number of the task to be updated:"))
+            # check if the number exists
+            with open(file=list_path, encoding="utf8", mode="r+") as file_obj:
+                list_content = json.load(fp=file_obj)
+                if number > len(list_content):
+                    click.echo(colored(f"The number: {number} doesn't exists in the given list\n", "red"))
+                    sys.exit(1)
+                # The number exists
+                # ask for the new message
+                new_task = input(colored("Task: ", "yellow"))
+                # find the element in the list
+                list_content[number - 1]["task"] = new_task
+                click.echo("\n")
+                click.echo(colored("updated list", "blue"))
+                # rewrite the to-do list (json file)
+                file_obj.truncate(0)
+                file_obj.seek(0)
+                json.dump(obj=list_content, fp=file_obj, indent=2)
+                # print the updated list
+        except ValueError as error:
+            click.echo(colored(error, "red"))
+            sys.exit(1)
+        show_tasks(lists_dir=lists_dir, list_name=listname)
+    else:
+        click.echo(colored(f"The to-do list: {listname} doesn't exists!"))
+
+
 @click.command()
 @click.option("--delete", default=0, help="delete a task --del=TASK_NUMBER")
 @click.option("--add", help='to add "new task" to the task list')
-@click.option("--update", help="to update the task --update=TASK_NUMBER in the task list.")
-@click.option("--show", help="Display the to-do list.")
+@click.option("--update", help="to update a task in the given list.")
+@click.option("--show", help="Display the to-do list. --show LISTS display all stored lists")
 @click.option("--create", help='create a todolist')
+@click.option("--del_list", help="Delete the given to-do list")
 @click.argument('listname', required=False)
-def main(delete, add, update, show, create, listname):
+def main(delete, add, update, show, create, listname, del_list):
     """A todolist programm as command line
     """
     # Variables
@@ -208,18 +285,22 @@ def main(delete, add, update, show, create, listname):
         status = create_file(dir_name, create)
         if status == -1:
             sys.exit(1)
-    if add:
-        if listname:
-            add_task(lists_dir=dir_name, task=add, list_name=listname)
-        else:
-            click.echo("please give the name of the list: run 'todolist --help' to get help")
+    if add and listname:
+        add_task(lists_dir=dir_name, task=add, list_name=listname)
+    elif add and listname is not True:
+        click.echo("please give the name of the list: run 'todolist --help' to get help")
     if show and show != "LISTS":
         show_tasks(lists_dir=dir_name, list_name=show)
     elif show == "LISTS":
         show_list(lists_dir=dir_name)
     if delete != 0 and listname:
         del_task(number=delete, lists_dir=dir_name, list_name=listname)
+    if del_list:
+        delete_list(lists_dir=dir_name, list_name=del_list)
+    if update:
+        update_task(lists_dir=dir_name, listname=update)
 
 
 if __name__ == "__main__":
+    # pylint: disable= no-value-for-parameter
     main()

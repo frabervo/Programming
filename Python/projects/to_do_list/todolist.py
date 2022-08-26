@@ -146,6 +146,7 @@ def show_tasks(lists_dir: str, list_name: str) -> None:
                 tsk = task["task"]
                 dte = task["date"]
                 click.echo(f"{num}. | {tsk} | added at {dte}")
+        click.echo("\n")
     else:
         click.echo(colored(f"the to-list: {list_name} doesn't exists", "red"))
 
@@ -208,7 +209,6 @@ def delete_list(lists_dir: str, list_name: str) -> None:
     path_list = Path(lists_dir + "/." + list_name + ".json")
 
     if path_list.exists() is True:
-        print(path_list)
         os.system(f"rm {path_list}")
         click.echo(colored(f"The to-do list: {list_name} was deleted successfully!", "green"))
     else:
@@ -267,15 +267,18 @@ def update_task(lists_dir: str, listname: str) -> None:
 
 
 @click.command()
-@click.option("--delete", default=0, help="delete a task --del=TASK_NUMBER")
-@click.option("--add", help='to add "new task" to the task list')
-@click.option("--update", help="to update a task in the given list.")
-@click.option("--show", help="Display the to-do list. --show LISTS display all stored lists")
-@click.option("--create", help='create a todolist')
-@click.option("--del_list", help="Delete the given to-do list")
+@click.option("--delete", default=0, help="delete a task --delete task_number listname")
+@click.option("--add", help='to add "new task" to the task list: --add "task" listname')
+@click.option("--update", help="to update a task in the given list: --update listname")
+@click.option("--show", help="Display the to-do list: --show listname or  --show LISTS display all stored lists")
+@click.option("--create", help='create a todolist: --create listname')
+@click.option("--del_list", help="Delete the given to-do list: --del_list listname")
 @click.argument('listname', required=False)
 def main(delete, add, update, show, create, listname, del_list):
     """A todolist programm as command line
+
+    Warning:
+    If more than one valid command are given just the first one will be operated
     """
     # Variables
     status = 0      # store the status code of the called functions
@@ -285,20 +288,28 @@ def main(delete, add, update, show, create, listname, del_list):
         status = create_file(dir_name, create)
         if status == -1:
             sys.exit(1)
-    if add and listname:
+        sys.exit(0)
+    if (add and listname) and (delete == 0 or not update or not show or not create or not del_list):
         add_task(lists_dir=dir_name, task=add, list_name=listname)
-    elif add and listname is not True:
+        sys.exit(0)
+    elif (add and listname is not True) and (delete == 0 or not update or not show or not create or not del_list):
         click.echo("please give the name of the list: run 'todolist --help' to get help")
-    if show and show != "LISTS":
+        sys.exit(0)
+    if (show and show != "LISTS") and (not add or delete == 0 or not update or not listname or not create or not del_list):
         show_tasks(lists_dir=dir_name, list_name=show)
-    elif show == "LISTS":
+        sys.exit(0)
+    elif (show == "LISTS") and (not add or delete == 0 or not update or not listname or not create or not del_list):
         show_list(lists_dir=dir_name)
-    if delete != 0 and listname:
+        sys.exit(0)
+    if (delete != 0 and listname) and (not add or not update or not create or not del_list or not show):
         del_task(number=delete, lists_dir=dir_name, list_name=listname)
-    if del_list:
+        sys.exit(0)
+    if del_list and (not add or not update or not create or not del_list or not show or not listname or delete == 0):
         delete_list(lists_dir=dir_name, list_name=del_list)
-    if update:
+        sys.exit(0)
+    if update and (not add or not del_list or not create or not del_list or not show or not listname or delete == 0):
         update_task(lists_dir=dir_name, listname=update)
+        sys.exit(0)
 
 
 if __name__ == "__main__":

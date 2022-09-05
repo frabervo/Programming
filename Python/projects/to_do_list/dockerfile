@@ -3,7 +3,6 @@ FROM python:3
 WORKDIR /root/todolist
 
 # Add all neccessary files to the working directory
-COPY install.sh .
 COPY setup.py .
 COPY todolist.py .
 COPY test.py .

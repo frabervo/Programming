@@ -1,3 +1,7 @@
+"""Test
+
+The purpose of this test is to create to-do lists with given names and add tasks to the fist to-do list
+"""
 import json
 from pathlib import Path
 import sys
@@ -7,7 +11,11 @@ from termcolor import colored
 list_names = ["uni", "einkauf", "arbeit", "alltag"]
 
 
-def create_lists():
+def create_lists() -> None:
+    """create a to-do list
+
+    This Function creates files in the working directory to save tasks
+    """
     exists_yes = False
     for listname in list_names:
         path_dir_name = str(Path.home()) + "/.todolists/" + "." + listname + ".json"
@@ -22,12 +30,15 @@ def create_lists():
         print(colored("Files already exist", "green"))
 
 
-def add_content_first_list():
-    number = 1
+def add_content_first_list() -> None:
+    """add tasks to the first to-do list
+
+    This function adds tasks to the first to-do list
+    """
     total_task = 20
     list_content = []
     # prepare the  list content
-    for task_number in range(1, 20):
+    for task_number in range(1, total_task):
         task = {
             "task_number": task_number,
             "task": "Vorlesung besuchen",
@@ -46,7 +57,9 @@ def add_content_first_list():
         sys.exit(1)
 
 
-def main():
+def main() -> None:
+    """run the test
+    """
     create_lists()
     add_content_first_list()
 

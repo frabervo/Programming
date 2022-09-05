@@ -73,12 +73,15 @@ steps:
   + [start_container.sh](./start_container.sh) in excecutable mode
   + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
 3. pull the container image
-run the following command: ```docker pull bervo/todolist:latest```
 
-More informations to the image here: https://hub.docker.com/repository/docker/bervo/todolist/general
+    run the following command: ```docker pull bervo/todolist:latest```
+
+    More informations to the image here: https://hub.docker.com/repository/docker/bervo/todolist/general
+
 4. run the script start_container from the working directory 
-run the following command: ```./start_container.sh```
+    
+    run the following command: ```./start_container.sh```
 
-**If you to delete the containe**r, run the following command from the working directory: ```./uninstall_docker.sh```
+**If you want to delete the containe**r, run the following command from the working directory: ```./uninstall_docker.sh```
 
 The previous command just delete the container but the volume and persistant data are still there. **To delete the volume and data(to-do lists)**, run the command: ```./uninstall_docker.sh vol```

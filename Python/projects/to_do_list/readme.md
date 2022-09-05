@@ -14,54 +14,44 @@ The purpose of this project is to create a todolist application that will run as
 + Display the to-do lists
 + Display task of a given to-do list 
 
-## Tools 
+## Tools to run the app locally
 The application was developed using the Python programming language. The Python script [todolist.py](./todolist.py) content the programm code and a script [setup.py](./setup.py) (for the setuptool environment) is needed to setup the virtual environment for the application command line.
 
-## Python virtual environment
+### Steps
+1. define a working directory 
+2. install the python virtual environment: ```python3 -m venv .todolist_env```
+3. Make sure to have the following scripts:  
+  + [setup.py](./setup.py)
+  + [todolist.py](./todolist.py)
+  + [test.py](./test.py)
+  + [start_container.sh](./start_container.sh) in excecutable mode
+  + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
+4. activate the python virtual environment: ```source .todolist_env/bin/activate ``` from the working directory
+5. run the setup script: ```pip install --editable .```
+
+Yet you can run the command lines of the to-do list app like ```todolist --help``` 
+
+
+### Python virtual environment
 to create a virtual environment run this command in the directory where the code is stored.
 ```
 python3 -m venv .todolist_env
 ```
 this command will create a directory named ".todolist_env". This folder is hidden and can be shown with ```ls -la```. 
 
-### activate the virtual environment
+#### activate the virtual environment
 run this command in the project directory:
 ```source .todolist_env/bin/activate```
 
 To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```. 
 
 write this codeline in the file .bashrc if you want to make it permanent.
-### deactivate the virtual environment
+#### deactivate the virtual environment
 command: ```deactivate```
 
-## Setuptools Integration
-### why the setuptools Integration?
+### Setuptools Integration
+#### why the setuptools Integration?
 [Setuptools](https://en.wikipedia.org/wiki/Setuptools) is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). 
-
-### how to use the setuptools Integration?
-To bundle your script with setuptools, you only need the script in a Python package and a [setup.py](./setup.py) file.
-1. activate the virtual enivronment
-run this command in the project directory:
-```
-source ./.todolist_env/bin/activate
-```
-2. set the runtime environment
-run this command in the directory where the code is stored:
-```
-pip install --editable .
-```
-after that you run the todolist commands
-```
-todolist --help
-``` 
-
-### Detailed description of the source code
-Because a docstring was included by programming. The documentation of the can be generate automaticaly by runing the follow command in the project directory: 
-```python3 ./doc_generatotor.py >> code_doc.txt``` 
-
-This command is also in the shell script: ```./doc_generator.sh```
-
-So the documentation of the code: ./doc_code.txt
 
 # Run the app in a docker container
 steps: 
@@ -85,3 +75,11 @@ steps:
 **If you want to delete the containe**r, run the following command from the working directory: ```./uninstall_docker.sh```
 
 The previous command just delete the container but the volume and persistant data are still there. **To delete the volume and data(to-do lists)**, run the command: ```./uninstall_docker.sh vol```
+
+# Detailed description of the source code
+Because a docstring was included by programming. The documentation of the can be generate automaticaly by runing the follow command in the project directory: 
+```python3 ./doc_generatotor.py >> code_doc.txt``` 
+
+This command is also in the shell script: ```./doc_generator.sh```
+
+So the documentation of the code: ./doc_code.txt

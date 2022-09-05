@@ -59,6 +59,24 @@ todolist --help
 Because a docstring was included by programming. The documentation of the can be generate automaticaly by runing the follow command in the project directory: 
 ```python3 ./doc_generatotor.py >> code_doc.txt``` 
 
-This command is also in the shell script: ./doc_generator.sh
+This command is also in the shell script: ```./doc_generator.sh```
 
 So the documentation of the code: ./doc_code.txt
+
+# Run the app in a docker container
+steps: 
+1. definir a working directory
+2. copy the following files in the working directory
+  + [setup.py](./setup.py)
+  + [todolist.py](./todolist.py)
+  + [test.py](./test.py)
+  + [start_container.sh](./start_container.sh) in excecutable mode
+  + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
+3. pull the container image
+run the following command: ```docker pull bervo/todolist:latest```
+4. run the script start_container from the working directory 
+run the following command: ```./start_container.sh```
+
+**If you to delete the containe**r, run the following command from the working directory: ```./uninstall_docker.sh```
+
+The previous command just delete the container but the volume and persistant data are still there. **To delete the volume and data(to-do lists)**, run the command: ```./uninstall_docker.sh vol```

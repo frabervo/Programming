@@ -14,10 +14,10 @@ The purpose of this project is to create a todolist application that will run as
 + Display the to-do lists
 + Display task of a given to-do list 
 
-## Tools to run the app locally
+# run the app locally
 The application was developed using the Python programming language. The Python script [todolist.py](./todolist.py) content the programm code and a script [setup.py](./setup.py) (for the setuptool environment) is needed to setup the virtual environment for the application command line.
 
-### Steps
+## Steps
 1. define a working directory 
 2. install the python virtual environment: ```python3 -m venv .todolist_env```
 3. Make sure to have the following scripts:  
@@ -31,17 +31,20 @@ The application was developed using the Python programming language. The Python 
 
 Yet you can run the command lines of the to-do list app like ```todolist --help``` 
 
+**uninstall the app**
 
+steps: run all commands from the working directory 
+1. deactivate the python virtual environment: ```deactivate```
+2. delete files of the virtual environment: ```rm -dr ./.todolist_env```
+3. delete all packages: ```rm -dr __pycache__ todolist_package.egg-info```
+4. delete data: ```rm -dr ~/.todolists```
+## Tools
 ### Python virtual environment
 to create a virtual environment run this command in the directory where the code is stored.
 ```
 python3 -m venv .todolist_env
 ```
 this command will create a directory named ".todolist_env". This folder is hidden and can be shown with ```ls -la```. 
-
-#### activate the virtual environment
-run this command in the project directory:
-```source .todolist_env/bin/activate```
 
 To shorten the command, an alias can be used: ```alias activate="source ./.todolist_env/bin/activate"```. 
 

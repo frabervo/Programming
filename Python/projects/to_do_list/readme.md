@@ -74,6 +74,8 @@ steps:
   + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
 3. pull the container image
 run the following command: ```docker pull bervo/todolist:latest```
+
+More informations to the image here: https://hub.docker.com/repository/docker/bervo/todolist/general
 4. run the script start_container from the working directory 
 run the following command: ```./start_container.sh```
 

@@ -1,0 +1,15 @@
+FROM python:3
+
+WORKDIR /root/todolist
+
+# Add all neccessary files to the working directory
+COPY install.sh .
+COPY setup.py .
+COPY todolist.py .
+COPY test.py .
+# run the Script: setup.py
+RUN pip install --upgrade pip
+RUN pip install --editable .
+RUN todolist
+# run the start-commando
+ENTRYPOINT ["/bin/bash"]

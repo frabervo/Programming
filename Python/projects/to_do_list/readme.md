@@ -24,6 +24,12 @@ The application was developed using the Python programming language. The Python 
   + [setup.py](./setup.py)
   + [todolist.py](./todolist.py)
   + [test.py](./test.py)
+   
+  Just run the scripts: [pull_files.sh](./pull_files.sh). 
+  Run these commands for that: 
+  + ```wget -L wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
+  + ```bash ./pull_files.sh```
+  
 4. activate the python virtual environment: ```source .todolist_env/bin/activate ``` from the working directory
 5. run the setup script: ```pip install --editable .```
 
@@ -36,6 +42,7 @@ steps: run all commands from the working directory
 2. delete files of the virtual environment: ```rm -dr ./.todolist_env```
 3. delete all packages: ```rm -dr __pycache__ todolist_package.egg-info```
 4. delete data: ```rm -dr ~/.todolists```
+
 ## Tools
 ### Python virtual environment
 to create a virtual environment run this command in the directory where the code is stored.
@@ -65,7 +72,7 @@ steps:
   + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
 
   Just run the scripts: [pull_files.sh](./pull_files.sh). 
-  Run these commands: 
+  Run these commands for that: 
   + ```wget -L wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
   + ```bash ./pull_files.sh```
   

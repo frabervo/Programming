@@ -24,8 +24,6 @@ The application was developed using the Python programming language. The Python 
   + [setup.py](./setup.py)
   + [todolist.py](./todolist.py)
   + [test.py](./test.py)
-  + [start_container.sh](./start_container.sh) in excecutable mode
-  + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
 4. activate the python virtual environment: ```source .todolist_env/bin/activate ``` from the working directory
 5. run the setup script: ```pip install --editable .```
 
@@ -73,11 +71,11 @@ steps:
 
 4. run the script start_container from the working directory 
     
-    run the following command: ```./start_container.sh```
+    run the following command: ```bash ./start_container.sh```
 
-**If you want to delete the containe**r, run the following command from the working directory: ```./uninstall_docker.sh```
+**If you want to delete the containe**r, run the following command from the working directory: ```bash ./uninstall_docker.sh```
 
-The previous command just delete the container but the volume and persistant data are still there. **To delete the volume and data(to-do lists)**, run the command: ```./uninstall_docker.sh vol```
+The previous command just delete the container but the volume and persistant data are still there. **To delete the volume and data(to-do lists)**, run the command: ```bash ./uninstall_docker.sh vol```
 
 # Detailed description of the source code
 Because a docstring was included by programming. The documentation of the can be generate automaticaly by runing the follow command in the project directory: 

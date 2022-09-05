@@ -1,0 +1,110 @@
+Help on module todolist:
+
+NAME
+    todolist - Modules implementation for the todolist commando line interface
+
+FUNCTIONS
+    add_task(lists_dir: str, task: str, list_name: str) -> None
+        add task to the to-do list
+        
+        This function takes the given string and inserts it as a task in the list_name. The task is assigned a date
+        and a number number
+        
+        Parameters
+        ----------
+        lists_dir: str
+                the name of the directory where the lists are stored
+        task: str
+            the task to be add
+        list_name: str:
+                the name of the to-do list
+    
+    create_file(lists_dir: str, filename: str) -> int
+        this function creates a file in the home directory where the task will be added
+        
+        Parameters
+        ----------
+        lists_dir : str
+                the name of the directory where the lists are stored
+        filename : str
+                the name of the to-do list
+        
+        Returns
+        -------
+        int : the return code. 0 if the file did not exist and -1 if the file already exists
+    
+    create_lists_dir() -> str
+        create the directory where the to-do lists will be stored.
+        
+        this function create in der Home directory of the current user a subdirectory named .todolists
+        
+        Returns
+        -------
+            str: the directory name where the lists are stored
+    
+    del_task(number: int, lists_dir: str, list_name: str) -> None
+        delete  task
+        
+        the function delete the tasks with the number of the list: list_name
+        
+        Parameters
+        ----------
+            number : int
+                the number of the task to be delete
+            lists_dir : str
+                    the name of the directory where the lists are stored
+            list_name : str
+                    the name of the to-do list
+    
+    delete_list(lists_dir: str, list_name: str) -> None
+        delete  list
+        
+        the function delete the given list
+        
+        Parameters
+        ----------
+            lists_dir : str
+                    the name of the directory where the lists are stored
+            list_name : str
+                    the name of the to-do list
+    
+    show_list(lists_dir: str) -> None
+        show the to-do lists
+        
+        this function show all the lists stored
+        
+        Parameters:
+        lists_dir :str
+                the name of the directory where the lists are stored
+    
+    show_tasks(lists_dir: str, list_name: str) -> None
+        show the tasks of a list
+        
+        the function show the tasks of the given list name
+        
+        Parameters
+        ----------
+            lists_dir : str
+                    the name of the directory where the lists are stored
+            list_name : str
+                    the name of the to-do list
+    
+    update_task(lists_dir: str, listname: str) -> None
+        update a to-do list
+        
+        this function update a task in the given to-do list
+        
+        Parameters
+        ----------
+        lists_dir : str
+                the name of the directory where the lists are stored
+        listname :
+                the name of the list to be update
+
+DATA
+    main = <Command main>
+
+FILE
+    /home/admin/Documents/python_projects/github/Programming/Python/projects/to_do_list/todolist.py
+
+

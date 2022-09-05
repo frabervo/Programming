@@ -20,7 +20,7 @@ def create_lists_dir() -> str:
     -------
         str: the directory name where the lists are stored
     """
-    todolist_dir = str(Path.home()) + "/.todolists"     # 1. define the path of the directory in the home directory
+    todolist_dir = str(Path.cwd()) + "/.todolists"     # 1. define the path of the directory in the home directory
     todolist_dir = Path(todolist_dir)                   # 2. Initialise the Path object with the path
     if todolist_dir.exists() is not True:               # 3. check if the directory already exists
         todolist_dir.mkdir(parents=True)                # 4. create the directory with all subdirectory

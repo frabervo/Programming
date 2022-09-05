@@ -18,7 +18,7 @@ def create_lists() -> None:
     """
     exists_yes = False
     for listname in list_names:
-        path_dir_name = str(Path.home()) + "/.todolists/" + "." + listname + ".json"
+        path_dir_name = str(Path.cwd()) + "/.todolists/" + "." + listname + ".json"
         path_dir = Path(path_dir_name)
         if path_dir.exists() is not True:
             path_dir.touch(exist_ok=False)
@@ -46,7 +46,7 @@ def add_content_first_list() -> None:
         }
         list_content.append(task)
     # write list_content in the json_file ( the first one)
-    list_path = str(Path.home()) + "/.todolists/" + "." + list_names[0] + ".json"
+    list_path = str(Path.cwd()) + "/.todolists/" + "." + list_names[0] + ".json"
     if Path(list_path).exists() is True:
         with open(file=list_path, encoding="utf8", mode="r+") as file_obj:
             file_obj.truncate(0)

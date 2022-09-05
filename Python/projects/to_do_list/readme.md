@@ -63,6 +63,12 @@ steps:
   + [test.py](./test.py)
   + [start_container.sh](./start_container.sh) in excecutable mode
   + [uninstall_docker.sh](./uninstall_docker.sh) in excecutable mode
+
+  Just run the scripts: [pull_files.sh](./pull_files.sh). 
+  Run these commands: 
+  + ```wget -L wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
+  + ```bash ./pull_files.sh```
+  
 3. pull the container image
 
     run the following command: ```docker pull bervo/todolist:latest```

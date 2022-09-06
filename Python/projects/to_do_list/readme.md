@@ -1,9 +1,5 @@
 # Developing a to-list application
 The purpose of this project is to create a todolist application that will run as CLI (Command Line Interface)
-## Technical requirements
-+ OS : Linux
-+ Python3 installed
-+ a Bash Shell
 
 ## Functionalities of the application
 + create a to-do list 
@@ -17,6 +13,11 @@ The purpose of this project is to create a todolist application that will run as
 # run the app locally
 The application was developed using the Python programming language. The Python script [todolist.py](./todolist.py) content the programm code and a script [setup.py](./setup.py) (for the setuptool environment) is needed to setup the virtual environment for the application command line.
 
+## Technical requirements
++ OS : Linux (used Ubuntu 20.04.4 LTS)
++ Python3 installed
++ a Bash Shell
+
 ## Steps
 1. define a working directory 
 2. install the python virtual environment: ```python3 -m venv .todolist_env```
@@ -26,14 +27,14 @@ The application was developed using the Python programming language. The Python 
   + [test.py](./test.py)
    
   Just run the scripts: [pull_files.sh](./pull_files.sh). 
-  Run these commands for that: 
+  Run these commands from the working directory for that: 
   + ```wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
   + ```bash ./pull_files.sh```
   
 4. activate the python virtual environment: ```source .todolist_env/bin/activate ``` from the working directory
 5. run the setup script: ```pip install --editable .```
 
-Yet you can run the command lines of the to-do list app like ```todolist --help``` 
+Yet you can run the command lines of the to-do list app like ```todolist --help```.
 
 **uninstall the app**
 
@@ -62,7 +63,12 @@ command: ```deactivate```
 [Setuptools](https://en.wikipedia.org/wiki/Setuptools) is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). 
 
 # Run the app in a docker container
-steps: 
+
+## Technical requirements
++ OS : Linux (used Ubuntu 20.04.4 LTS)
++ a Bash Shell
+
+**steps:** 
 1. definir a working directory
 2. copy the following files in the working directory
   + [setup.py](./setup.py)
@@ -96,4 +102,4 @@ Because a docstring was included by programming. The documentation of the can be
 
 This command is also in the shell script: ```./doc_generator.sh```
 
-So the documentation of the code: ./doc_code.txt
+So the documentation of the code: [documentation](./doc_code.txt)

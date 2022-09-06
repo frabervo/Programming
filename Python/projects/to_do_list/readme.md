@@ -74,7 +74,7 @@ steps:
   Just run the scripts: [pull_files.sh](./pull_files.sh). 
   Run these commands for that: 
   + ```wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files_docker.sh```
-  + ```bash ./pull_files.sh```
+  + ```bash ./pull_files_docker.sh```
   
 3. pull the container image
 

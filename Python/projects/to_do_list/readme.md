@@ -27,7 +27,7 @@ The application was developed using the Python programming language. The Python 
    
   Just run the scripts: [pull_files.sh](./pull_files.sh). 
   Run these commands for that: 
-  + ```wget -L wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
+  + ```wget -L https://raw.githubusercontent.com/frabervo/Programming/main/Python/projects/to_do_list/pull_files.sh```
   + ```bash ./pull_files.sh```
   
 4. activate the python virtual environment: ```source .todolist_env/bin/activate ``` from the working directory
